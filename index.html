@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>高数复习论坛 · 全交互原型</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="auth-active">
+  <div class="ambient-grid" aria-hidden="true"></div>
+  <div id="authRoot"></div>
+
+  <header class="app-header glass-bar">
+    <a class="brand" href="#dashboard" data-route="dashboard" aria-label="高数复习论坛首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" role="img">
+          <path class="brand-curve" d="M29 9c-8 1-8 8-7 15l1 7c1 7-2 10-8 10" />
+          <path class="brand-axis" d="M14 29h20" />
+          <circle class="brand-dot" cx="32" cy="18" r="3.2" />
+        </svg>
+      </span>
+      <span>
+        <strong>高数复习论坛</strong>
+        <small>校内智慧复习与互助社区</small>
+      </span>
+    </a>
+
+    <nav class="top-tabs" aria-label="主导航">
+      <button data-route="dashboard" class="is-active">首页</button>
+      <button data-route="knowledge">知识树</button>
+      <button data-route="notes">优质笔记</button>
+      <button data-route="community">互助社区</button>
+      <button data-route="campus">校园圈</button>
+      <button data-route="profile">个人中心</button>
+      <button data-route="admin">管理后台</button>
+    </nav>
+
+    <div class="header-tools">
+      <label class="search-field">
+        <i class="local-icon" data-lucide="search" aria-hidden="true"></i>
+        <input id="globalSearch" type="search" placeholder="搜索知识点、笔记、求助" />
+      </label>
+      <button class="icon-button" data-modal="login" aria-label="切换身份">
+        <i class="local-icon" data-lucide="circle-user-round" aria-hidden="true"></i>
+      </button>
+      <button class="logout-button" data-action="logout">
+        <i class="local-icon" data-lucide="log-out" aria-hidden="true"></i>
+        <span>退出登录</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="app-layout">
+    <aside class="side-rail glass-panel">
+      <div class="rail-profile">
+        <div class="avatar" id="avatarText">林</div>
+        <div>
+          <strong id="userName">林同学</strong>
+          <span id="userRole">校内学生</span>
+        </div>
+      </div>
+      <div class="progress-card">
+        <span>本周复习进度</span>
+        <strong id="sideProgress">18 / 24</strong>
+        <div class="progress-track"><i id="sideProgressBar"></i></div>
+      </div>
+      <nav class="side-nav" aria-label="模块导航">
+        <button data-route="dashboard" class="is-active"><i class="local-icon" data-lucide="layout-dashboard" aria-hidden="true"></i>复习驾驶舱</button>
+        <button data-route="knowledge"><i class="local-icon" data-lucide="network" aria-hidden="true"></i>知识树</button>
+        <button data-route="notes"><i class="local-icon" data-lucide="notebook-pen" aria-hidden="true"></i>优质笔记</button>
+        <button data-route="community"><i class="local-icon" data-lucide="messages-square" aria-hidden="true"></i>互助社区</button>
+        <button data-route="campus"><i class="local-icon" data-lucide="message-circle-heart" aria-hidden="true"></i>校园圈</button>
+        <button data-route="profile"><i class="local-icon" data-lucide="user-round" aria-hidden="true"></i>个人中心</button>
+        <button data-route="admin"><i class="local-icon" data-lucide="shield-check" aria-hidden="true"></i>管理后台</button>
+      </nav>
+      <div class="rail-actions">
+        <button class="primary-action" data-modal="note"><i class="local-icon" data-lucide="notebook-pen" aria-hidden="true"></i>发布笔记</button>
+        <button class="secondary-action" data-modal="question"><i class="local-icon" data-lucide="circle-help" aria-hidden="true"></i>发起求助</button>
+        <button class="secondary-action" data-modal="feedback"><i class="local-icon" data-lucide="badge-alert" aria-hidden="true"></i>知识纠错</button>
+      </div>
+    </aside>
+
+    <main id="view" class="view-root" tabindex="-1"></main>
+
+    <aside id="detailPanel" class="detail-panel glass-panel" aria-live="polite"></aside>
+  </div>
+
+  <div id="modalRoot"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="./assets/lucide.min.js"></script>
+  <script src="./assets/gsap.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
