@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Breeze Glass Showcase</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="workspace" aria-label="Breeze glass component showcase">
+        <aside class="sidebar glass-panel">
+          <div class="brand">
+            <span class="brand-mark" aria-hidden="true">B</span>
+            <div>
+              <strong>Breeze Glass</strong>
+              <span>Blur component lab</span>
+            </div>
+          </div>
+
+          <nav class="component-tabs" aria-label="Components">
+            <button class="is-active" data-component="blur">BlurView</button>
+            <button data-component="progressive">ProgressiveBlur</button>
+            <button data-component="liquid">LiquidGlass</button>
+            <button data-component="switch">BlurSwitch</button>
+          </nav>
+
+          <div class="control-stack">
+            <label>
+              <span>Blur intensity</span>
+              <input id="intensity" type="range" min="4" max="44" value="24" />
+            </label>
+            <label>
+              <span>Glass opacity</span>
+              <input id="opacity" type="range" min="18" max="72" value="38" />
+            </label>
+            <label>
+              <span>Corner radius</span>
+              <input id="radius" type="range" min="8" max="34" value="24" />
+            </label>
+          </div>
+        </aside>
+
+        <section class="stage-wrap">
+          <div class="topbar glass-panel">
+            <span>Native-feeling blur UI</span>
+            <div class="topbar-actions" aria-hidden="true">
+              <i></i><i></i><i></i>
+            </div>
+          </div>
+
+          <section class="stage" aria-live="polite">
+            <div class="wallpaper" aria-hidden="true">
+              <span class="beam beam-a"></span>
+              <span class="beam beam-b"></span>
+              <span class="tile tile-a"></span>
+              <span class="tile tile-b"></span>
+              <span class="tile tile-c"></span>
+            </div>
+
+            <article class="preview-card active" data-panel="blur">
+              <div class="panel-head">
+                <span>
+                  <small>BlurView</small>
+                  <strong>Frosted surface</strong>
+                </span>
+                <b class="glyph">~</b>
+              </div>
+              <p>Layered backdrop blur, translucent fill, hairline highlights, and soft edge light for app panels.</p>
+              <div class="metric-row">
+                <span><strong id="blurValue">24px</strong><small>blur</small></span>
+                <span><strong id="alphaValue">38%</strong><small>alpha</small></span>
+                <span><strong id="radiusValue">24px</strong><small>radius</small></span>
+              </div>
+            </article>
+
+            <article class="preview-card" data-panel="progressive">
+              <div class="panel-head">
+                <span>
+                  <small>ProgressiveBlur</small>
+                  <strong>Soft fade overlay</strong>
+                </span>
+                <b class="glyph">=</b>
+              </div>
+              <p>Stacked blur bands create a native-looking mist at the bottom of feeds, sheets, and headers.</p>
+              <div class="mist-demo" aria-hidden="true">
+                <span></span><span></span><span></span><span></span><span></span>
+              </div>
+            </article>
+
+            <article class="preview-card" data-panel="liquid">
+              <div class="panel-head">
+                <span>
+                  <small>LiquidGlass</small>
+                  <strong>Pressed light capsule</strong>
+                </span>
+                <b class="glyph">*</b>
+              </div>
+              <button class="liquid-button" type="button">
+                <span class="spark"></span>
+                Liquid action
+                <span class="arrow">></span>
+              </button>
+              <p>Designed for high-value actions, floating controls, and iOS-style glass affordances.</p>
+            </article>
+
+            <article class="preview-card" data-panel="switch">
+              <div class="panel-head">
+                <span>
+                  <small>BlurSwitch</small>
+                  <strong>Glass state control</strong>
+                </span>
+                <b class="glyph">o</b>
+              </div>
+              <button id="switchControl" class="glass-switch is-on" type="button" aria-pressed="true">
+                <span></span>
+              </button>
+              <p>Compact switch with luminous track, frosted thumb, and clear on/off states.</p>
+            </article>
+          </section>
+
+          <section class="code-card glass-panel">
+            <div class="code-head">
+              <span>Component API</span>
+              <button id="copyCode" type="button">Copy</button>
+            </div>
+            <pre><code id="codeBlock">&lt;BlurView intensity={24} tint="dark" radius={24}&gt;
+  &lt;GlassPanel opacity={0.38}&gt;
+    Frosted surface
+  &lt;/GlassPanel&gt;
+&lt;/BlurView&gt;</code></pre>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
