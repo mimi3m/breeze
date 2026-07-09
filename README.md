@@ -1,5 +1,7 @@
 # 高数复习论坛 GitHub Pages 版本
 
+在线访问地址: https://mimi3m.github.io/breeze/
+
 This folder contains the static site captured from `http://8.130.121.104:8010/`.
 
 ## Publish To GitHub Pages
